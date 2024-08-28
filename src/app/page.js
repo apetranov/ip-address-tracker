@@ -32,7 +32,7 @@ export default function Home() {
 
       const data = await response.json();
       setTimezone(data.timezone);
-      console.log("timezone", data.timezone);
+      // console.log("timezone", data.timezone);
     } catch (error) {
       console.error("Error fetching timezone data:", error);
       return null;
@@ -63,12 +63,12 @@ export default function Home() {
 
       const data = await response.json();
       setPos(data);
-      console.log("data", data);
+      // console.log("data", data);
 
       const { location } = data;
       if (location) {
         setPosition([location.lat, location.lng]);
-        console.log("position", [location.lat, location.lng]);
+        // console.log("position", [location.lat, location.lng]);
       } else {
         console.error("Location not found in the response");
       }
@@ -86,7 +86,7 @@ export default function Home() {
   }, [position]);
 
   useEffect(() => {
-    console.log("Updated timezone:", timezone);
+    // console.log("Updated timezone:", timezone);
   }, [timezone]);
 
   return (
